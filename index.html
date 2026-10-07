@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Escola Municipal de Música TOM | Ipatinga</title>
+<meta name="description" content="Desde 1994 a Escola Municipal de Música Tenente Oswaldo Machado ensina música de graça em Ipatinga. Histórias de alunos, professores e da Banda TOM.">
+<meta property="og:title" content="Escola Municipal de Música TOM">
+<meta property="og:description" content="Há 32 anos, a música muda histórias no Vale do Aço.">
+<meta property="og:image" content="img/capa-aluna-clarinete-2026.webp">
+<!-- ponytail: noindex até a escola aprovar o uso das fotos dos alunos; tirar esta linha no lançamento oficial -->
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#102b4c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23102b4c'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-family='Georgia,serif' font-size='42' font-weight='700' fill='%23c9963a'%3ET%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Instrument+Sans:wght@400..700&display=swap">
+<style>
+  :root {
+    --tinta: #17191f;
+    --papel: #ffffff;
+    --nevoa: #f2f4f7;
+    --farda: #102b4c;
+    --latao: #c9963a;
+    --cinza: #5a6170;
+    --claro: #d5deea;
+    --pauta: #c3ccd8;
+    --serif: "Bodoni Moda", Didot, Georgia, serif;
+    --sans: "Instrument Sans", system-ui, sans-serif;
+    --margem: clamp(1rem, 5vw, 3rem);
+  }
+  * { box-sizing: border-box; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  body { margin: 0; background: var(--papel); color: var(--tinta); font: 400 1.0625rem/1.6 var(--sans); }
+  img { display: block; max-width: 100%; height: auto; }
+  figure { margin: 0; }
+  figcaption { margin-top: .5rem; font-size: .875rem; line-height: 1.4; color: var(--cinza); }
+  a { color: var(--farda); text-underline-offset: .2em; }
+  :focus-visible { outline: 3px solid var(--latao); outline-offset: 3px; }
+  h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 600; line-height: 1.1; }
+  h2 { font-size: clamp(2rem, 4.5vw, 3rem); max-width: 20ch; }
+  h3 { font-size: clamp(1.5rem, 3vw, 2rem); max-width: 26ch; }
+  p { margin: 0; max-width: 62ch; }
+  h2 + p, h3 + p, p + p { margin-top: 1rem; }
+  blockquote + p { margin-top: 1.5rem; }
+  .miolo { max-width: 72rem; margin-inline: auto; padding-inline: var(--margem); }
+  main > section { padding-block: clamp(4rem, 9vw, 7rem); }
+  .nevoa { background: var(--nevoa); }
+  .escuro { background: var(--farda); color: var(--papel); }
+  .escuro p, .escuro li { color: var(--claro); }
+  .escuro a { color: var(--papel); }
+  .escuro figcaption { color: #aebbd0; }
+  .duas { display: grid; gap: 2.5rem; align-items: start; }
+  .foto-cheia img { width: 100%; object-fit: cover; border-radius: 4px; }
+
+  .botao { display: inline-flex; align-items: center; min-height: 48px; padding: 0 1.25rem; border-radius: 4px; font-weight: 600; text-decoration: none; }
+  .botao-latao { background: var(--latao); color: var(--farda); }
+  .escuro .botao-latao { color: var(--farda); }
+  .botao-vazado { border: 1.5px solid currentColor; color: inherit; }
+  .acoes { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
+
+  blockquote { margin: 2rem 0 0; padding-left: 1.25rem; border-left: 3px solid var(--latao); }
+  blockquote p { font: italic 500 clamp(1.375rem, 2.6vw, 1.75rem)/1.3 var(--serif); color: var(--tinta); }
+  .escuro blockquote p { color: var(--papel); }
+  blockquote footer { margin-top: .625rem; font-size: .875rem; color: var(--cinza); }
+  .escuro blockquote footer { color: #aebbd0; }
+
+  /* Capa */
+  .capa { background: var(--farda); color: var(--papel); padding-block: 1.25rem clamp(2.5rem, 6vw, 4rem); overflow: hidden; }
+  .topo { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem 1.5rem; }
+  /* a marca: TOM pousado numa pauta de cinco linhas */
+  .marca { --vao: .185em; position: relative; isolation: isolate; padding-inline: .1em; font: 800 2rem/1 var(--serif); color: var(--papel); text-decoration: none; }
+  .marca::before { content: ""; position: absolute; z-index: -1; left: -.35em; right: -.35em; top: 49%; translate: 0 -50%; height: calc(var(--vao) * 4 + 1px); background: repeating-linear-gradient(to bottom, var(--latao) 0 1px, transparent 1px var(--vao)); }
+  .topo nav { display: flex; flex-wrap: wrap; gap: .25rem 1rem; font-size: .875rem; }
+  .topo nav a { color: var(--claro); text-decoration: none; padding-block: .5rem; }
+  .topo nav a:hover { color: var(--papel); text-decoration: underline; }
+  .capa-grade { display: grid; gap: 2.5rem; align-items: center; margin-top: clamp(2.5rem, 7vw, 4.5rem); }
+  .nome { color: var(--claro); margin-bottom: 1rem; }
+  .capa h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); max-width: 15ch; }
+  .capa .lead { margin-top: 1.25rem; font-size: 1.1875rem; color: var(--claro); }
+  .capa-foto img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 4px; }
+  .capa-foto figcaption { color: #aebbd0; }
+
+  /* Fita de rostos: um aluno por ano, de 2020 a 2026 */
+  .rostos { list-style: none; max-width: 72rem; margin: clamp(2.5rem, 6vw, 4rem) auto 0; padding: 0 var(--margem) .5rem; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(7rem, 1fr); gap: .75rem; overflow-x: auto; scroll-snap-type: x mandatory; }
+  .rostos li { scroll-snap-align: start; }
+  .rostos img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 4px; }
+  .rostos b { display: block; margin-top: .5rem; font: 600 1.25rem/1 var(--serif); color: var(--papel); }
+  .rostos span { display: block; margin-top: .25rem; font-size: .8125rem; line-height: 1.3; color: #aebbd0; }
+
+  /* Histórias */
+  .historia + .historia { margin-top: clamp(4rem, 8vw, 6rem); padding-top: clamp(4rem, 8vw, 6rem); border-top: 1px solid #dde2e9; }
+  .antes-depois { display: grid; gap: 1rem; align-items: end; margin-top: 2rem; }
+  .antes-depois img { width: 100%; object-fit: cover; border-radius: 4px; }
+  .antes-depois figure:first-child img { aspect-ratio: 4 / 5; }
+  .antes-depois figure:last-child img { aspect-ratio: 3 / 2; }
+  .passos { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; gap: 1rem; }
+  .passos li { display: grid; grid-template-columns: 5.5rem 1fr; gap: 1rem; padding-top: 1rem; border-top: 1px solid #dde2e9; }
+  .passos time { font: italic 600 1.0625rem/1.5 var(--serif); color: var(--cinza); }
+  .pilha { display: grid; gap: 1.25rem; }
+  .pilha img { width: 100%; border-radius: 4px; }
+  .mosaico { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-top: 2rem; }
+  .mosaico img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 4px; }
+  .citacao-grande blockquote { margin-top: 0; }
+  .citacao-grande blockquote p { font-size: clamp(1.625rem, 3.2vw, 2.25rem); }
+
+  /* Quem ensina */
+  .equipe { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 1rem 1.5rem; }
+  .equipe strong { display: block; font: 600 1.25rem/1.2 var(--serif); }
+  .equipe span { font-size: .9375rem; color: var(--cinza); }
+
+  /* Linha do tempo: cada ano é um compasso; o ano fica no lugar do número do compasso */
+  .sistemas { list-style: none; margin: 3rem 0 0; padding: 0; display: grid; row-gap: 3rem; }
+  .compasso { --fim: 2px; }
+  .compasso:last-child { --fim: 0px; }
+  .compasso time { display: block; margin: 0 0 .5rem .5rem; font: italic 600 1.125rem/1 var(--serif); color: var(--cinza); }
+  .pauta { display: block; height: 33px; border-left: 2px solid var(--tinta); border-right: var(--fim) solid var(--tinta); background: repeating-linear-gradient(to bottom, var(--pauta) 0 1px, transparent 1px 8px); }
+  .compasso:last-child .pauta {
+    background:
+      linear-gradient(to left, var(--tinta) 0 5px, transparent 5px 8px, var(--tinta) 8px 9.5px, transparent 9.5px),
+      repeating-linear-gradient(to bottom, var(--pauta) 0 1px, transparent 1px 8px);
+  }
+  .compasso img, .sem-foto { margin: 1rem 1rem 0 .5rem; width: calc(100% - 1.5rem); aspect-ratio: 4 / 3; object-fit: cover; border-radius: 4px; }
+  .sem-foto { display: grid; place-items: center; padding: 1rem; background: var(--farda); color: var(--papel); font: italic 600 1.5rem/1.2 var(--serif); text-align: center; }
+  .compasso h3 { margin: 1rem 1rem .375rem .5rem; font-size: 1.375rem; }
+  .compasso p { margin: 0 1rem 0 .5rem; color: var(--cinza); font-size: .975rem; }
+
+  /* Galeria */
+  .galeria { columns: 4 9.5rem; column-gap: 1rem; margin-top: 2.5rem; }
+  .galeria figure { break-inside: avoid; margin-bottom: 1.25rem; }
+  .galeria img { width: 100%; border-radius: 4px; }
+
+  /* Inscrições */
+  .blocos { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 2rem; margin-top: 2.5rem; }
+  .blocos h3 { font-size: 1.375rem; }
+  .blocos ul { margin: .75rem 0 0; padding-left: 1.1rem; }
+  address { font-style: normal; font-size: 1.125rem; line-height: 1.7; color: var(--claro); }
+  address strong { display: block; margin-bottom: .25rem; font: 600 1.5rem/1.25 var(--serif); color: var(--papel); }
+  .contato { margin-top: 3.5rem; padding-top: 2.5rem; border-top: 1px solid rgba(255, 255, 255, .15); }
+
+  footer.rodape { background: var(--farda); color: #aebbd0; border-top: 1px solid rgba(255, 255, 255, .15); padding-block: 2.5rem; font-size: .875rem; }
+  footer.rodape a { color: var(--papel); }
+
+  @media (min-width: 40rem) {
+    .sistemas { grid-template-columns: repeat(2, 1fr); }
+    .compasso:nth-child(odd) { --fim: 0px; }
+    .mosaico { grid-template-columns: repeat(3, 1fr); }
+    .mosaico.quatro { grid-template-columns: repeat(2, 1fr); }
+    .antes-depois { grid-template-columns: 2fr 3fr; }
+  }
+  @media (min-width: 62rem) {
+    .capa-grade { grid-template-columns: 1.2fr .8fr; }
+    .duas { grid-template-columns: 1.15fr 1fr; gap: 4rem; }
+    .sistemas { grid-template-columns: repeat(3, 1fr); }
+    .compasso:nth-child(n) { --fim: 0px; }
+    .compasso:nth-child(3n):not(:last-child) { --fim: 2px; }
+    .mosaico.quatro { grid-template-columns: repeat(4, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<header class="capa">
+  <div class="miolo topo">
+    <a class="marca" href="#" aria-label="Escola TOM, início">TOM</a>
+    <nav aria-label="Seções">
+      <a href="#historias">Histórias</a>
+      <a href="#tempo">Linha do tempo</a>
+      <a href="#banda">Banda</a>
+      <a href="#inscricoes">Inscrições</a>
+    </nav>
+  </div>
+
+  <div class="miolo capa-grade">
+    <div>
+      <p class="nome">Escola Municipal de Música Tenente Oswaldo Machado, Ipatinga</p>
+      <h1>Há 32 anos, a música muda histórias no Vale do Aço.</h1>
+      <p class="lead">Tudo começou em 1994, com 40 crianças estudando flauta e violão no recreio de uma escola do Veneza II. Hoje, crianças, jovens e adultos aprendem música de graça na TOM, cantam nos corais e tocam na Banda TOM.</p>
+      <div class="acoes">
+        <a class="botao botao-latao" href="#inscricoes">Quero estudar na TOM</a>
+        <a class="botao botao-vazado" href="#historias">Conhecer as histórias</a>
+      </div>
+    </div>
+    <figure class="capa-foto">
+      <img src="img/capa-aluna-clarinete-2026.webp" width="619" height="1100" alt="Aluna sorridente com clarinete e a camiseta da Banda TOM">
+      <figcaption>Aluna da Banda TOM no Encontro de Bandas de Carmésia, julho de 2026.</figcaption>
+    </figure>
+  </div>
+
+  <ul class="rostos" aria-label="Alunos da TOM de 2020 a 2026">
+    <li><img src="img/mae-e-filha-2020.webp" width="480" height="853" alt="Menina sorrindo com a camiseta da TOM" loading="lazy" style="object-position: 50% 12%"><b>2020</b><span>Aluna em casa na pandemia</span></li>
+    <li><img src="img/rosto-isabelly-2021.webp" width="480" height="700" alt="Menina sorrindo com a camiseta da TOM" loading="lazy"><b>2021</b><span>Isabelly convida para a cantata</span></li>
+    <li><img src="img/rosto-arlyane-2021.webp" width="480" height="700" alt="Menina de laço no cabelo sorrindo" loading="lazy"><b>2021</b><span>Arlyane, aluna do coral</span></li>
+    <li><img src="img/rosto-flautistas-2022.webp" width="900" height="900" alt="Duas flautistas sorrindo com suas flautas" loading="lazy"><b>2022</b><span>Flautistas nos 58 anos de Ipatinga</span></li>
+    <li><img src="img/rosto-flauta-doce-2023.webp" width="900" height="900" alt="Meninos tocando flauta doce" loading="lazy"><b>2023</b><span>Flauta doce nos 29 anos da escola</span></li>
+    <li><img src="img/rosto-piano-2024.webp" width="785" height="785" alt="Jovem tocando piano em apresentação" loading="lazy"><b>2024</b><span>Formatura de cantores e instrumentistas</span></li>
+    <li><img src="img/rosto-saxofone-2025.webp" width="900" height="900" alt="Menino em cadeira de rodas tocando saxofone" loading="lazy"><b>2025</b><span>Recital de saxofone e clarinete</span></li>
+    <li><img src="img/rosto-saxofone-2026.webp" width="719" height="900" alt="Menino ao lado do saxofonista Angelo Torres" loading="lazy"><b>2026</b><span>Workshop com Angelo Torres</span></li>
+  </ul>
+</header>
+
+<main>
+  <section aria-labelledby="t-origem">
+    <div class="miolo duas">
+      <figure class="foto-cheia">
+        <img src="img/banda-tom-arquivo.webp" width="1400" height="695" alt="Jovens da Banda TOM tocando trompetes em desfile, foto antiga" loading="lazy">
+        <figcaption>A Banda TOM em desfile, em foto de arquivo divulgada pelo Centro Cultural Municipal.</figcaption>
+      </figure>
+      <div>
+        <h2 id="t-origem">Começou no recreio</h2>
+        <p>Em 1994, a Escola Municipal Márcio de Andrade Guerra, no Veneza II, tinha flautas e violões comprados e muitos alunos sem ter o que fazer. O recreio virou hora de ensaio: 40 crianças começaram a estudar teoria, flauta e violão. Delas saiu o 1º Festival de Música e, depois, uma banda. Os maestros Mariano Melo e Jairo Lopes da Silva são lembrados como os fundadores.</p>
+        <blockquote>
+          <p>“E eu vi que o recreio passou a ser o horário de ensaio da meninada.”</p>
+          <footer>Lucilene Ramos, diretora da escola, ao Diário do Aço em 2018</footer>
+        </blockquote>
+        <p>A escola fez 32 anos em agosto de 2026. Desde 2021 funciona no Centro Cultural Municipal, no Centro de Ipatinga, e em dezembro de 2024 foi inventariada como bem cultural da cidade.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="historias" class="nevoa" aria-labelledby="t-historias">
+    <div class="miolo">
+      <h2 id="t-historias">Histórias que a música mudou</h2>
+      <p>Algumas das pessoas que passaram pela TOM, contadas pela própria escola e pela imprensa da região.</p>
+
+      <article class="historia" style="margin-top: 3rem">
+        <h3>Amanda, Davi e Clara: da sala de aula ao palco da Assembleia</h3>
+        <div class="antes-depois">
+          <figure>
+            <img src="img/amanda-2023.webp" width="800" height="900" alt="Menina com clarinete entre dois clarinetistas adultos" loading="lazy">
+            <figcaption>Amanda em junho de 2023, no concerto de 25 clarinetistas da UEMG.</figcaption>
+          </figure>
+          <figure>
+            <img src="img/amanda-2024-assembleia.webp" width="933" height="622" alt="Jovem clarinetista no palco ao lado de um pianista" loading="lazy">
+            <figcaption>Amanda em outubro de 2024, no palco do teatro da Assembleia de Minas.</figcaption>
+          </figure>
+        </div>
+        <div class="duas" style="margin-top: 2.5rem">
+          <div>
+            <p>Os três estudavam clarinete com o professor Thiago Otoni quando foram selecionados por concurso para ter aulas com Alexandre Silva, clarinetista da Filarmônica de Minas Gerais e professor da UEMG. Dali em diante a agenda deles não parou.</p>
+            <ol class="passos">
+              <li><time datetime="2023-03">mar 2023</time><span>Selecionados para as aulas com Alexandre Silva.</span></li>
+              <li><time datetime="2023-06">jun 2023</time><span>Amanda toca no concerto do Grupo de Clarinetistas da UEMG, com 25 clarinetistas.</span></li>
+              <li><time datetime="2023-08">ago 2023</time><span>Primeiro ensaio do quarteto de clarinetes: Clara, Davi, Amanda e o professor Thiago.</span></li>
+              <li><time datetime="2023-12">dez 2023</time><span>Masterclass com Iura de Rezende, professor da Illinois State University, no Museu Mineiro.</span></li>
+              <li><time datetime="2024-05">mai 2024</time><span>Davi e Amanda tocam com o grupo de clarinetistas da UEMG em Belo Horizonte.</span></li>
+              <li><time datetime="2024-10">out 2024</time><span>Davi e Amanda se apresentam na Assembleia de Minas com a Fantasia Op. 43 de Niels Gade, a terceira apresentação deles na capital.</span></li>
+            </ol>
+          </div>
+          <div class="pilha">
+            <figure>
+              <img src="img/clara-davi-amanda-2023.webp" width="1000" height="736" alt="Três jovens com clarinetes ao lado de um piano" loading="lazy">
+              <figcaption>Clara, Davi e Amanda em março de 2023.</figcaption>
+            </figure>
+            <figure>
+              <img src="img/masterclass-2023.webp" width="902" height="509" alt="Alunos com clarinetes em salão de museu" loading="lazy">
+              <figcaption>Masterclass no Museu Mineiro, dezembro de 2023.</figcaption>
+            </figure>
+            <figure>
+              <img src="img/davi-2024-assembleia.webp" width="933" height="622" alt="Jovem clarinetista no palco ao lado de um piano de cauda" loading="lazy">
+              <figcaption>Davi na Assembleia de Minas, outubro de 2024.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </article>
+
+      <article class="historia duas">
+        <div>
+          <h3>Arthur: da flauta à regência</h3>
+          <p>Arthur Fernandez estudou teoria e flauta com a TOM na Escola Márcio Guerra. Como a maioria dos colegas, não tinha nem instrumento próprio para treinar em casa.</p>
+          <p>Em 2018, aos 16 anos, já trabalhava para ser maestro: regeu a Orquestra E. M. Cantar na festa da escola e tocava em casamentos para ajudar a mãe com as despesas. Contou que a música o ensinou a assumir responsabilidades e a cumprir compromissos. O sonho era tocar na Orquestra Sinfônica de Belo Horizonte.</p>
+        </div>
+        <div class="citacao-grande">
+          <blockquote>
+            <p>“Eu tive que ter muita paciência e perseverança pra não desistir.”</p>
+            <footer>Arthur Fernandez ao Diário do Aço, em 2018</footer>
+          </blockquote>
+        </div>
+      </article>
+
+      <article class="historia">
+        <div class="duas">
+          <div>
+            <h3>A turma da flauta</h3>
+            <p>Em outubro de 2022, a professora Amanda Carmo reuniu quase todos os alunos de flauta transversal para tocar junto pela primeira vez. Desde então, a turma se apresenta várias vezes por ano na Biblioteca Municipal, com Bach, Beethoven e Gossec no programa, e tem gente de todas as idades.</p>
+          </div>
+          <blockquote>
+            <p>“Foi um excelente momento para tocarmos juntos e começarmos a nos conhecer e a nos reconhecer como a ‘turma da flauta’.”</p>
+            <footer>Amanda Carmo, professora de flauta transversal, em 2022</footer>
+          </blockquote>
+        </div>
+        <div class="mosaico quatro">
+          <figure>
+            <img src="img/flauta-2022.webp" width="808" height="576" alt="Turma de flautistas de várias idades reunida" loading="lazy">
+            <figcaption>Encontro da classe de flauta, dezembro de 2022.</figcaption>
+          </figure>
+          <figure>
+            <img src="img/flauta-2024.webp" width="1100" height="710" alt="Professora e duas alunas sorrindo com flautas" loading="lazy">
+            <figcaption>Flautistas no Musical de Páscoa, 2024.</figcaption>
+          </figure>
+          <figure>
+            <img src="img/flauta-2026-audicao.webp" width="960" height="724" alt="Senhora tocando flauta acompanhada por violão" loading="lazy">
+            <figcaption>Audição da classe na Biblioteca Municipal, junho de 2026.</figcaption>
+          </figure>
+          <figure>
+            <img src="img/flauta-2026-turma.webp" width="1200" height="900" alt="Grande grupo de flautistas na biblioteca" loading="lazy">
+            <figcaption>A turma da flauta em junho de 2026.</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article class="historia">
+        <h3>Separados, mas juntos</h3>
+        <p>Em 2020, com a pandemia, a escola foi para dentro de casa. Na Páscoa, cada aluno gravou de casa a sua parte de uma homenagem para a cidade. As aulas de flauta passaram para a tela, e a clarinetista Ana Flávia tocou o tema de Toy Story. A volta ao palco veio com a casa nova: em novembro de 2021, o Centro Cultural Municipal foi entregue com uma cantata dos alunos.</p>
+        <div class="mosaico">
+          <figure>
+            <img src="img/aula-online-2020.webp" width="867" height="1003" alt="Aula de flauta por videochamada com aluna e professores" loading="lazy" style="object-position: 50% 0">
+            <figcaption>Aula de flauta on-line, junho de 2020.</figcaption>
+          </figure>
+          <figure>
+            <img src="img/ana-flavia-2020.webp" width="480" height="853" alt="Menina tocando clarinete em casa, com fones de ouvido" loading="lazy" style="object-position: 50% 35%">
+            <figcaption>Ana Flávia toca o tema de Toy Story, novembro de 2020.</figcaption>
+          </figure>
+          <figure>
+            <img src="img/cantata-2021.webp" width="1200" height="799" alt="Crianças de máscara cantando com partituras" loading="lazy">
+            <figcaption>Cantata na entrega do Centro Cultural, novembro de 2021.</figcaption>
+          </figure>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-equipe">
+    <div class="miolo">
+      <div class="duas">
+        <div>
+          <h2 id="t-equipe">Quem ensina</h2>
+          <p>Por trás de cada aluno no palco tem um professor que sentou ao lado dele na sala de aula.</p>
+          <ul class="equipe">
+            <li><strong>Amanda Carmo</strong><span>Flauta transversal</span></li>
+            <li><strong>Thiago Otoni</strong><span>Clarinete</span></li>
+            <li><strong>Wanderson Franco de Sá</strong><span>Regente da Banda TOM, saxofone e clarinete</span></li>
+            <li><strong>Walter Mesquita</strong><span>Maestro dos corais e da orquestra</span></li>
+            <li><strong>Jansley Nascimento</strong><span>Metais</span></li>
+            <li><strong>Jeane Faria</strong><span>Flauta doce e iniciação musical</span></li>
+            <li><strong>Wanderson Santos</strong><span>Piano</span></li>
+            <li><strong>Enner Jefferson</strong><span>Violão</span></li>
+          </ul>
+          <p style="margin-top: 1.5rem; font-size: .9375rem; color: var(--cinza)">A escola também cita na equipe o instrutor João Batista Amaro e a educadora artística Aline Carvalho.</p>
+        </div>
+        <blockquote>
+          <p>“Cada aluno que sobe ao palco representa o resultado de um trabalho coletivo que transforma vidas.”</p>
+          <footer>Carlão Oliveira, secretário municipal de Cultura, Esporte e Lazer, em julho de 2025</footer>
+        </blockquote>
+      </div>
+      <div class="mosaico">
+        <figure>
+          <img src="img/jeane-iniciacao.webp" width="799" height="1000" alt="Professora tirando foto com crianças que seguram certificados" loading="lazy">
+          <figcaption>Jeane Faria com a turma de iniciação musical, 2023.</figcaption>
+        </figure>
+        <figure>
+          <img src="img/wanderson-piano.webp" width="1200" height="675" alt="Professor orientando menina ao piano" loading="lazy">
+          <figcaption>Wanderson Santos na aula de piano, 2023.</figcaption>
+        </figure>
+        <figure>
+          <img src="img/enner-violao.webp" width="1200" height="675" alt="Professor de violão tocando com duas alunas" loading="lazy">
+          <figcaption>Enner Jefferson na aula de violão, 2023.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="tempo" class="nevoa" aria-labelledby="t-tempo">
+    <div class="miolo">
+      <h2 id="t-tempo">32 anos, compasso por compasso</h2>
+      <p>Cada compasso é um ano que marcou a escola.</p>
+      <ol class="sistemas">
+        <li class="compasso">
+          <time datetime="1994">1994</time><span class="pauta" aria-hidden="true"></span>
+          <div class="sem-foto" aria-hidden="true">40 crianças, flautas e violões</div>
+          <h3>Nasce no recreio</h3>
+          <p>Na Escola Municipal Márcio de Andrade Guerra, no Veneza II.</p>
+        </li>
+        <li class="compasso">
+          <time datetime="2019">2019</time><span class="pauta" aria-hidden="true"></span>
+          <img src="img/encontro-bandas-2019.webp" width="1080" height="721" alt="Grupo de alunos com instrumentos em evento ao ar livre" loading="lazy">
+          <h3>Mais Música</h3>
+          <p>Encontro de bandas municipais pelo programa Mais Música.</p>
+        </li>
+        <li class="compasso">
+          <time datetime="2020">2020</time><span class="pauta" aria-hidden="true"></span>
+          <img src="img/rosto-violao-2021.webp" width="900" height="898" alt="Aluna tocando violão sozinha no palco, sob um foco de luz" loading="lazy">
+          <h3>Aula pela tela</h3>
+          <p>Na pandemia, aulas on-line e gravações feitas em casa. Em 2021, a escola grava para os 57 anos de Ipatinga.</p>
+        </li>
+        <li class="compasso">
+          <time datetime="2021">2021</time><span class="pauta" aria-hidden="true"></span>
+          <img src="img/centro-cultural-2021.webp" width="1000" height="1000" alt="Três pessoas, duas com a camiseta da TOM, na inauguração do Centro Cultural" loading="lazy">
+          <h3>Casa nova</h3>
+          <p>A escola se muda para o Centro Cultural Municipal, entregue em novembro.</p>
+        </li>
+        <li class="compasso">
+          <time datetime="2022">2022</time><span class="pauta" aria-hidden="true"></span>
+          <img src="img/desfile-2022.webp" width="1100" height="1100" alt="Alunos tocando flauta e sopros em desfile" loading="lazy">
+          <h3>Bicentenário</h3>
+          <p>Desfile do 7 de Setembro dos 200 anos da Independência e o primeiro encontro da turma da flauta.</p>
+        </li>
+        <li class="compasso">
+          <time datetime="2023">2023</time><span class="pauta" aria-hidden="true"></span>
+          <img src="img/coral-infantil-2023.webp" width="960" height="960" alt="Crianças do coral cantando" loading="lazy">
+          <h3>Primeiro Musical de Páscoa</h3>
+          <p>Corais, orquestra de alunos e professores no Parque Ipanema. Em agosto, festa de 29 anos.</p>
+        </li>
+        <li class="compasso">
+          <time datetime="2024">2024</time><span class="pauta" aria-hidden="true"></span>
+          <img src="img/formatura-2024.webp" width="1080" height="1080" alt="Formandos segurando certificados" loading="lazy">
+          <h3>30 anos</h3>
+          <p>Formatura de cantores e instrumentistas e o reconhecimento como bem cultural de Ipatinga.</p>
+        </li>
+        <li class="compasso">
+          <time datetime="2025">2025</time><span class="pauta" aria-hidden="true"></span>
+          <img src="img/formatura-2025.webp" width="952" height="1100" alt="Formandos no palco do teatro com certificados" loading="lazy">
+          <h3>Formaturas</h3>
+          <p>21 alunos de piano formados em julho e a formatura da turma no Teatro Zélia Olguin, em dezembro.</p>
+        </li>
+        <li class="compasso">
+          <time datetime="2026">2026</time><span class="pauta" aria-hidden="true"></span>
+          <img src="img/banda-ensaio-2026.webp" width="895" height="780" alt="Banda ensaiando com clarinetes, trombones e tuba" loading="lazy">
+          <h3>Carmésia</h3>
+          <p>A Banda TOM leva Ipatinga ao 4º Encontro de Bandas de Carmésia, com corporações de 15 cidades.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="banda" class="escuro" aria-labelledby="t-banda">
+    <div class="miolo">
+      <div class="duas">
+        <div>
+          <h2 id="t-banda">A Banda TOM</h2>
+          <p>São 35 músicos sob a regência de Wanderson Franco de Sá. O repertório vai de dobrados e clássicos a temas de filmes e música folclórica.</p>
+          <p>A banda toca no 7 de Setembro, no aniversário da cidade, em solenidades e em encontros de bandas pelo interior de Minas. Em novembro de 2025, as bandas de música de Minas Gerais foram reconhecidas como patrimônio cultural imaterial do estado.</p>
+          <p><a href="https://www.instagram.com/bandademusica_tom/">Acompanhe a banda no Instagram</a></p>
+        </div>
+        <figure class="foto-cheia">
+          <img src="img/banda-santo-antonio-grama.webp" width="1200" height="900" alt="Banda TOM reunida em frente a uma igreja" loading="lazy">
+          <figcaption>Encontro de Bandas de Santo Antônio do Grama, agosto de 2025.</figcaption>
+        </figure>
+      </div>
+      <div class="mosaico">
+        <figure>
+          <img src="img/banda-tambor.webp" width="720" height="540" alt="Menino tocando caixa no desfile" loading="lazy">
+          <figcaption>Desfile de 7 de Setembro, 2025.</figcaption>
+        </figure>
+        <figure>
+          <img src="img/banda-desfile-2025.webp" width="720" height="540" alt="Alunos tocando flautas e clarinetes no desfile" loading="lazy">
+          <figcaption>A banda no 7 de Setembro, 2025.</figcaption>
+        </figure>
+        <figure>
+          <img src="img/banda-saxofones.webp" width="1200" height="900" alt="Três saxofonistas sorrindo com camisetas verdes" loading="lazy">
+          <figcaption>Aniversário de 60 anos de Ipatinga, 2024.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-rostos">
+    <div class="miolo">
+      <h2 id="t-rostos">Rostos da TOM</h2>
+      <p>Alunos em recitais, audições, formaturas e apresentações dos últimos anos.</p>
+      <div class="galeria">
+        <figure><img src="img/rosto-clarinete-2025.webp" width="900" height="900" alt="Jovem tocando clarinete" loading="lazy"><figcaption>Recital de saxofone e clarinete, novembro de 2025.</figcaption></figure>
+        <figure><img src="img/rosto-piano-2025.webp" width="777" height="900" alt="Jovem ao piano no palco" loading="lazy"><figcaption>Formatura TOM 2025, Teatro Zélia Olguin.</figcaption></figure>
+        <figure><img src="img/rosto-coral-adulto-2023.webp" width="900" height="900" alt="Três alunas do coral adulto sorrindo" loading="lazy"><figcaption>Coral adulto nos 29 anos da escola, agosto de 2023.</figcaption></figure>
+        <figure><img src="img/rosto-saxofone-menina-2025.webp" width="900" height="900" alt="Menina tocando saxofone" loading="lazy"><figcaption>Recital de saxofone e clarinete, novembro de 2025.</figcaption></figure>
+        <figure><img src="img/rosto-trombone-2022.webp" width="751" height="751" alt="Menino experimentando um trombone com ajuda de um professor" loading="lazy"><figcaption>Dia a dia no Centro Cultural, junho de 2022.</figcaption></figure>
+        <figure><img src="img/rosto-coral-2024.webp" width="720" height="900" alt="Coral adulto cantando com echarpes vermelhas" loading="lazy"><figcaption>Cantata de Natal, dezembro de 2024.</figcaption></figure>
+        <figure><img src="img/rosto-flautistas-2023.webp" width="900" height="703" alt="Duas alunas sorrindo com flautas" loading="lazy"><figcaption>59 anos de Ipatinga, maio de 2023.</figcaption></figure>
+        <figure><img src="img/rosto-piano-2022.webp" width="720" height="900" alt="Menina de máscara tocando piano com o professor" loading="lazy"><figcaption>Aula de piano, maio de 2022.</figcaption></figure>
+        <figure><img src="img/rosto-saxofones-2025.webp" width="900" height="900" alt="Dois saxofonistas tocando lado a lado" loading="lazy"><figcaption>Recital de saxofone e clarinete, novembro de 2025.</figcaption></figure>
+        <figure><img src="img/rosto-trombone-2025.webp" width="900" height="600" alt="Jovem tocando trombone" loading="lazy"><figcaption>Recital de metais, agosto de 2025.</figcaption></figure>
+        <figure><img src="img/clarinete-2026.webp" width="1200" height="675" alt="Turma de clarinete reunida na biblioteca" loading="lazy"><figcaption>Audição da turma de clarinete, abril de 2026.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="inscricoes" class="escuro" aria-labelledby="t-inscricoes">
+    <div class="miolo">
+      <h2 id="t-inscricoes">Quer ser a próxima história?</h2>
+      <p>As aulas são gratuitas. As inscrições abrem uma vez por ano, no começo de fevereiro, e as vagas são limitadas.</p>
+      <div class="blocos">
+        <div>
+          <h3>Quem pode</h3>
+          <p>Crianças a partir de 8 anos, jovens e adultos. Essa foi a idade mínima de 2026.</p>
+        </div>
+        <div>
+          <h3>Como entrar</h3>
+          <p>A inscrição é presencial, no Centro Cultural, com um teste de aptidão na hora. Leve identidade, CPF e comprovante de endereço.</p>
+        </div>
+        <div>
+          <h3>Depois da lista</h3>
+          <p>Quem é classificado faz a matrícula com identidade, comprovante de endereço e uma foto 3x4.</p>
+        </div>
+        <div>
+          <h3>O que estudar em 2026</h3>
+          <ul>
+            <li>Violão</li>
+            <li>Sopros de metal e de palheta</li>
+            <li>Flauta doce e transversal</li>
+            <li>Prática de banda e orquestra</li>
+            <li>Canto coral adulto e infantil</li>
+            <li>Teoria musical</li>
+          </ul>
+        </div>
+      </div>
+      <p style="margin-top: 2rem">Em 2026, as inscrições foram de 2 a 6 de fevereiro, das 8h às 12h e das 13h às 17h. As datas de 2027 saem no <a href="https://www.instagram.com/escola_tom/">Instagram da escola</a>.</p>
+
+      <div class="contato duas">
+        <address>
+          <strong>Escola Municipal de Música TOM</strong>
+          Centro Cultural Municipal de Ipatinga<br>
+          Rua Mariana, 119, 2º andar, Centro<br>
+          Ipatinga, MG<br>
+          <a href="tel:+553138298253">(31) 3829-8253</a>
+        </address>
+        <div class="acoes" style="margin-top: 0">
+          <a class="botao botao-latao" href="tel:+553138298253">Ligar para a escola</a>
+          <a class="botao botao-vazado" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Mariana+119+Centro+Ipatinga+MG">Ver no mapa</a>
+          <a class="botao botao-vazado" href="https://www.instagram.com/escola_tom/">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="rodape">
+  <div class="miolo">
+    <p>Apoio: Prefeitura Municipal de Ipatinga, Secretaria Municipal de Cultura, Esporte e Lazer, Movimento Salvem as Bandas e Secult MG.</p>
+    <p>Fotos publicadas no Instagram da <a href="https://www.instagram.com/escola_tom/">Escola TOM</a>, da <a href="https://www.instagram.com/bandademusica_tom/">Banda TOM</a>, do <a href="https://www.instagram.com/centrocultural.ipatinga/">Centro Cultural Municipal</a>, da Prefeitura de Ipatinga, de professores e de parceiros. A origem da escola e a história do Arthur estão no <a href="https://www.diariodoaco.com.br/noticia/0061591-os-24-anos-da-escola-de-musica-e-canto-tom">Diário do Aço de 23/08/2018</a>.</p>
+  </div>
+</footer>
+
+</body>
+</html>
